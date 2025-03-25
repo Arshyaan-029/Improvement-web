@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoic Wealth: The Art of Money</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: #ffffff;
+            color: #222;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 1000px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            max-width: 550px;
+        }
+        h1 {
+            font-size: 42px;
+            font-weight: 600;
+            color: #1e1e1e;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        ul {
+            font-size: 18px;
+            color: #333;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Carousel Styling */
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin-top: 40px;
+            overflow: hidden;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+        }
+        .left {
+            left: 10px;
+        }
+        .right {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="file:///E:/Random/WEB/money.jpg" alt="Stoic Money Philosophy">
+        </div>
+        <div class="content">
+            <h1>Stoic Wealth: The Art of Money</h1>
+            <p>Money is not the end goal. It is a tool—a means to live with freedom, discipline, and purpose. The Stoic does not chase wealth for greed but earns, saves, and spends with wisdom.</p>
+            <p>Mastering money the Stoic way means detachment from excess, control over desires, and an unshakable mindset.</p>
+            <ul>
+                <li><strong>Minimalism:</strong> Less is more.</li>
+                <li><strong>Discipline:</strong> Save, invest, repeat.</li>
+                <li><strong>Mastery:</strong> Learn high-value skills.</li>
+                <li><strong>Integrity:</strong> Earn with virtue.</li>
+                <li><strong>Freedom:</strong> Money = Control over time.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Image Carousel -->
+    <div class="carousel-container">
+        <button class="arrow left" onclick="prevSlide()">❮</button>
+        <div class="carousel">
+            <img src="file:///E:/Random/WEB/the.jpg" alt="Finance">
+            <img src="file:///E:/Random/WEB/path.jpg" alt="Investment">
+            <img src="file:///E:/Random/WEB/to.jpg" alt="Success">
+            <img src="file:///E:/Random/WEB/rich.jpg" alt="Business">
+        </div>
+        <button class="arrow right" onclick="nextSlide()">❯</button>
+    </div>
+
+    <script>
+        let index = 0;
+        const slides = document.querySelectorAll('.carousel img');
+        function showSlide() {
+            const offset = -index * 400; // Image width
+            document.querySelector('.carousel').style.transform = `translateX(${offset}px)`;
+        }
+        function nextSlide() {
+            index = (index + 1) % slides.length;
+            showSlide();
+        }
+        function prevSlide() {
+            index = (index - 1 + slides.length) % slides.length;
+            showSlide();
+        }
+    </script>
+</body>
+</html>
